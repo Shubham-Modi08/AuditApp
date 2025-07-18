@@ -4,10 +4,10 @@ A comprehensive React Native mobile application designed for internal auditing p
 
 ---
 
-## ✨ Features
+## 🚀 Features
 
 ### 🔐 Role-Based Access Control
-- **Admin**: Full access – view, create, and delete audits  
+- **Admin**: Full access — view, create, and delete audits  
 - **Auditor**: Create and submit audit reports  
 - **Viewer**: View-only access to audit reports  
 
@@ -36,72 +36,109 @@ A comprehensive React Native mobile application designed for internal auditing p
 ## ⚙️ Installation
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- React Native CLI environment
-- iOS Simulator or Android Emulator
-- Xcode (for iOS development)
-- Android Studio (for Android development)
+- Node.js (v14 or higher)  
+- React Native CLI environment  
+- Xcode (for iOS development)  
+- Android Studio (for Android development)  
+- iOS Simulator or Android Emulator  
 
 ### Setup Instructions
 
-#### 1. Clone the repository
 ```bash
+# Clone the repository
 git clone <repository-url>
 cd AuditApp
-2. Install dependencies
-bash
-Copy
-Edit
+
+# Install dependencies
 npm install
 # or
 yarn install
-3. Install iOS dependencies (iOS only)
-bash
-Copy
-Edit
+
+# (iOS only) Install CocoaPods dependencies
 cd ios && pod install && cd ..
-4. Start the Metro bundler
-bash
-Copy
-Edit
+
+# Start Metro Bundler
 npm start
 # or
 yarn start
-5. Run the application
-For iOS:
-bash
-Copy
-Edit
+
+
+
+🛠 Technologies Used
+React Native – Cross-platform mobile development
+
+React Navigation – Navigation between screens
+
+Context API – State and role management
+
+TypeScript – Type-safe development
+
+React Native WebView – PDF viewer for policies
+
+React Native Image Picker – For image uploads
+
+📦 Key Dependencies
+@react-navigation/native
+
+@react-navigation/bottom-tabs
+
+@react-navigation/native-stack
+
+react-native-webview
+
+react-native-image-picker
+
+⚙️ Configuration
+Environment
+No special environment variables required
+
+Customization Options
+Colors: Update styles in individual screen components
+
+Policy PDF: Modify the URL in PolicyViewerScreen.tsx
+
+Audit Fields: Extend AuditData in AuditContext.tsx
+
+
+
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+# Run the app on iOS
 npm run ios
 # or
 yarn ios
-For Android:
-bash
-Copy
-Edit
+
+# Run the app on Android
 npm run android
 # or
 yarn android
-🚀 Usage
+
+
+
+
+📱 Usage
 Getting Started
 Launch the app and select your role: Admin, Auditor, or Viewer
 
-Navigate through main tabs: Audits and Policies
+Navigate between Audits and Policies tabs
 
-Create new audits (Admin/Auditor only) or view existing ones
+View or create audits based on your role
 
 Creating an Audit
 Tap New Audit from the Audit History screen
 
-Complete the 3-step form:
+Follow the 3-step form process:
 
-Step 1: Title, Department, Date
+Step 1: Basic Info (Title, Department, Date)
 
-Step 2: Assessment and Compliance Checklist
+Step 2: Assessment & Compliance Checklist
 
-Step 3: Findings, Recommendations, and Image Uploads
+Step 3: Key Findings, Recommendations, Image Uploads
 
-Submit to generate audit summary
+Review and submit the audit
+
+View the generated audit summary
 
 Managing Audits
 View: All roles can view audit history and details
@@ -110,124 +147,22 @@ Create: Auditors and Admins can create audits
 
 Delete: Only Admins can delete existing audits
 
-🧱 Project Structure
-bash
+
+
+📁 Project Structure
+graphql
 Copy
 Edit
 src/
 ├── context/
-│   ├── AuditContext.tsx        # Audit data management
-│   └── RoleContext.tsx         # User role management
+│   ├── AuditContext.tsx          # Manages audit data
+│   └── RoleContext.tsx           # Manages user roles
 ├── navigation/
-│   └── MainTabNavigator.tsx    # Tab navigation setup
+│   └── MainTabNavigator.tsx      # Bottom tab navigation
 ├── screens/
-│   ├── LoginScreen.tsx         # Role selection screen
-│   ├── AuditHistoryScreen.tsx  # Audit list and management
-│   ├── AuditFormScreen.tsx     # Multi-step audit creation
-│   ├── AuditSummaryScreen.tsx  # Audit submission confirmation
-│   └── PolicyViewerScreen.tsx  # PDF policy viewer
-└── App.tsx                     # Main app component
-🛠 Technologies Used
-React Native – Cross-platform mobile development
-
-React Navigation – Navigation and routing
-
-React Context API – Global state management
-
-TypeScript – Strongly typed JavaScript
-
-React Native WebView – PDF & web document viewing
-
-React Native Image Picker – Image attachment & upload
-
-📦 Key Dependencies
-@react-navigation/native – Navigation core
-
-@react-navigation/bottom-tabs – Bottom tab navigator
-
-@react-navigation/native-stack – Stack navigation
-
-react-native-webview – Web content/PDF rendering
-
-react-native-image-picker – Image capture/selection
-
-⚙️ Configuration
-Environment Setup
-No extra environment variables required for base functionality.
-
-Customization
-Colors: Modify screen stylesheets
-
-Policy Document: Change the PDF URL in PolicyViewerScreen.tsx
-
-Audit Fields: Extend AuditData type in AuditContext.tsx
-
-🔍 Feature Details
-✅ Form Validation
-Mandatory field checks at each step
-
-Instant error feedback
-
-Progress saved between steps
-
-🖼 Image Handling
-Multiple images supported
-
-Image preview and delete option
-
-Optimized for performance
-
-📊 Compliance Tracker
-Fully configurable checklist
-
-Pass/Fail visual indicators
-
-Automated compliance score
-
-👨‍💻 Development
-Start Development Server
-bash
-Copy
-Edit
-npm start
-Build for Production
-iOS
-bash
-Copy
-Edit
-npm run build:ios
-Android
-bash
-Copy
-Edit
-npm run build:android
-✅ Testing
-bash
-Copy
-Edit
-npm test
-🤝 Contributing
-Fork this repository
-
-Create your feature branch
-
-bash
-Copy
-Edit
-git checkout -b feature/your-feature
-Commit your changes
-
-bash
-Copy
-Edit
-git commit -am "Add new feature"
-Push your branch
-
-bash
-Copy
-Edit
-git push origin feature/your-feature
-Open a pull request 🚀
-
-📄 License
-This project is licensed under the MIT License.
+│   ├── LoginScreen.tsx           # Role selection screen
+│   ├── AuditHistoryScreen.tsx    # Lists and manages audits
+│   ├── AuditFormScreen.tsx       # Multi-step audit form
+│   ├── AuditSummaryScreen.tsx    # Shows submitted audit
+│   └── PolicyViewerScreen.tsx    # Displays PDF via WebView
+└── App.tsx                       # Main app entry point
